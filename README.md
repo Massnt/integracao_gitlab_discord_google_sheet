@@ -27,40 +27,65 @@ Neste momento todas dependências necessárias para rodar o projeto estão insta
 Para o funcionamento do projeto é necessário ter um conta configurada no google cloud console.
 1. Primeiramente deve ser feito o login no [google cloud console](https://console.developers.google.com/apis/library).
 2. Após o login, selecione ou crie um novo projeto:
+
 ![imagem google cloud console](screenshots/image.png)
+
 3. Crie ou selecione um projeto:
+
 ![seleção de projeto](screenshots/image-1.png)
 ### Criando um projeto
 1.  Informe um nome e a organização que seu projeto será vinculado
 ![formulario projeto](screenshots/image-2.png)
+
 Lembrando que para contas gratuitas, existe um limite de criação 25 projetos.
+
 2. Em seguida, clique no item **"Selecionar Projeto”** para acessar o projeto.
-![notificação selecionar projeto](image-3.png)
+
+![notificação selecionar projeto](screenshots/image-3.png)
 
 ### Ativando a API do Google Planilhas
 1. Com o projeto selecionado, irá ser apresentado a seguinte seção:
+   
 ![icones de acesso rápido](screenshots/image-4.png)
+
 Basta clicar em API's e serviços e uma nova tela será aberta:
+
 ![tela de serviços de api](screenshots/image-5.png)
+
 Clique no item **"ATIVAR APIS E SERVIÇOS"**
 2. Procure por **"Google Sheets API"**,  selecione a opção e na próxima tela clique em "ATIVAR"
+
 ![tela google sheet api](screenshots/image-6.png)
 
 ### Configurando a API
 1. No menu esquerdo (“APIs e serviços”), clique em **"Credenciais"**
+
 ![alt text](screenshots/image-8.png)
+
 2. Será aberta uma nova tela, clique em **"Criar Credenciais"** e em seguida **"Conta de serviço"**
+   
 ![alt text](screenshots/image-9.png)
+
 3. Vai ser apresentado o seguinte formulário, que deve ser preenchido com nome que deseja para conta de serviço, o id e descrição da conta de serviço:
+
 ![alt text](screenshots/image-10.png)
+
 4. Após a criação da conta de serviço acesse no menu **"IAM e administador"** e clique em **"Contas de serviço"**
+   
 ![alt text](screenshots/image-12.png)
-    Acesse a conta de serviço que acabou de criar
-    ![alt text](screenshots/image-13.png)
-    Entre na aba chaves da nova tela aberta e crie uma nova chave:
-    ![alt text](screenshots/image-15.png)
-    Crie a chave no formato JSON:
-    ![alt text](screenshots/image-16.png)
+
+Acesse a conta de serviço que acabou de criar
+
+![alt text](screenshots/image-13.png)
+
+Entre na aba chaves da nova tela aberta e crie uma nova chave:
+
+![alt text](screenshots/image-15.png)
+
+Crie a chave no formato JSON:
+
+![alt text](screenshots/image-16.png)
+
 Após o download, já é possível acessar a API com as credenciais baixadas.
 
 ### Configurando a environment
@@ -94,15 +119,18 @@ Caso queira expor a porta 80.
 Após rodar este comando o ngrok fornecerá algumas informações, o que importante para aplicação é o **Forwarding** que será a URL que redirecionará para o seu localhost.
 Com o a URL copiada, vamos vincular o webhook ao evento de merge do gitlab. Para isso deverá entrar no projeto no gitlab e nas configurações do projeto acessar a aba webhooks:
 ![alt text](screenshots/image-17.png)
+
 Crie um novo webhook:
 ![alt text](screenshots/image-18.png)
 Nesta seção, vamos utilizar a url copiada do ngrok para vincular no gitlab:
 ![alt text](screenshots/image-19.png)
 Agora precisamos configurar o evento de gatilho para o webhook, no caso do projeto são o Merge request events
 ![alt text](screenshots/image-21.png)
+
 Por fim basta adicionar o webhook.
 ![alt text](screenshots/image-22.png)
 
+## Execução
 Agora para o projeto funcionar, basta rodar a aplicação. Entre na pasta do projeto e rode o seguinte código:
 ```
 python3 app.py
